@@ -1,15 +1,13 @@
 -- Get the current tab character (either spaces or a tab character)
 local function get_tab_character()
-
-    local tabstop = vim.api.nvim_buf_get_option(0, 'tabstop')
-    local expandtab = vim.api.nvim_buf_get_option(0, 'expandtab')
+    local tabstop = vim.bo.tabstop
+    local expandtab = vim.bo.expandtab
     if expandtab then
         return string.rep(' ', tabstop)
     else
         return '\t'
     end
 end
-
 -- Function to remove the first occurrence of the tab character at the start of the line
 function smart_untab()
     local tab_char = get_tab_character()
