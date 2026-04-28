@@ -3,11 +3,11 @@ local common = require("config.lsp_config.common")
 
 -- Ensure servers are installed
 mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "rust_analyzer", "pyright" },
+    ensure_installed = { "lua_ls", "rust_analyzer", "pyright", "tinymist", "clangd" },
 })
 
 -- Load per-language configs
-local servers = { "lua_ls", "rust_analyzer", "pyright" }
+local servers = { "lua_ls", "rust_analyzer", "pyright", "tinymist", "clangd" }
 
 for _, server in ipairs(servers) do
   require("config.lsp_config." .. server)(common.on_attach, common.capabilities)

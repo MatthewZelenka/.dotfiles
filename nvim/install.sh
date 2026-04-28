@@ -7,7 +7,7 @@ if command -v apt-get &> /dev/null; then
 elif command -v yum &> /dev/null; then
     echo "YUM package manager detected"
 elif command -v pacman &> /dev/null; then
-    sudo pacman -S neovim lua-language-server ripgrep
+    sudo pacman -S neovim lua-language-server ripgrep unzip
 elif command -v winget &> /dev/null; then
     winget install -e --id Neovim.Neovim
     winget install -e --id LuaLS.lua-language-server    
