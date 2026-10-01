@@ -16,7 +16,7 @@ return {
         require("nvim-dap-virtual-text").setup()
 
         -- Auto open/close dapui when debugging starts/stops
-        dap.listeners.after.event_initialized["dapui_config"] = function()
+        dap.listeners.after.event_stopped["dapui_config"] = function()
             dapui.open()
         end
         dap.listeners.before.event_terminated["dapui_config"] = function()
